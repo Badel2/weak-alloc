@@ -1,0 +1,47 @@
+[package]
+name = "weak-alloc-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = { version = "0.4", features = ["arbitrary-derive"] }
+limit-alloc = "0.1"
+
+[dependencies.weak-alloc]
+path = "../weak-alloc"
+
+[dependencies.weak-list2]
+path = "../weak-list"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "alloc_dealloc"
+path = "fuzz_targets/alloc_dealloc.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "give_upgrade"
+path = "fuzz_targets/give_upgrade.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "give_upgrade_multi_thread"
+path = "fuzz_targets/give_upgrade_multi_thread.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "weak_list_safe_api"
+path = "fuzz_targets/weak_list_safe_api.rs"
+test = false
+doc = false

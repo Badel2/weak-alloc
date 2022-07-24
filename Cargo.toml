@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "weak-alloc",
+    "weak-list",
+]
