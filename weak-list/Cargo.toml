@@ -8,7 +8,7 @@ description = """
 Doubly linked, heterogeneous, list of Arc-like nodes that can be used to implement a least recently used cache.
 """
 repository = "https://github.com/Badel2/weak-alloc"
-readme = "weak-list/README.md"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
